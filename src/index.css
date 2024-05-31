@@ -11,3 +11,105 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #fbbc04; /* Google Keep's header background color */
+  padding: 10px 20px; /* Adds some padding for better spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+}
+
+.header img {
+  margin-right: 15px; /* Adds some space between the image and the header text */
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px; /* Adjust the font size to match Google Keep */
+  color: #202124; /* Text color for better contrast */
+  font-family: 'Product Sans', Arial, sans-serif; /* Google Sans font or fallback to Arial */
+}
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px 20px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+.main_note {
+  background-color: #f9f9f9; /* Light gray background */
+  padding: 20px;
+  border-radius: 8px; /* Curved edges */
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 300px; /* Set a fixed width */
+  margin: auto; /* Center the box horizontally */
+}
+
+.main_note form {
+  display: flex;
+  flex-direction: column;
+}
+
+.main_note input[type='text'],
+.main_note textarea {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.main_note input[type='text']::placeholder,
+.main_note textarea::placeholder {
+  color: #ccc; /* Placeholder text color */
+}
+
+.main_note button {
+  margin-top: 10px;
+}
+
+.notes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Gap between notes */
+  margin: 20px auto 0; /* Center the container horizontally and add space from the top */
+  max-width: 1200px; /* Set maximum width */
+  padding: 0 20px; /* Add space on both sides */
+}
+
+.notes {
+  flex: 0 1 calc(33.333% - 20px); /* 33.333% width for each note with gap */
+  background-color: #fff; /* White background */
+  padding: 15px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 20px; /* Spacing between notes */
+}
+
+.notes h1 {
+  font-size: 18px;
+  margin-bottom: 5px; /* Spacing between title and content */
+}
+
+.notes p {
+  font-size: 14px;
+  color: #666; /* Text color */
+  margin-bottom: 10px; /* Spacing between content and delete icon */
+}
+
+.deleteIcon {
+  color: #666; /* Icon color */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
