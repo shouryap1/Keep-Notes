@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 
-const CreateNotes = () => {
+const CreateNotes = (props) => {
+
+    const[expand,setExpand] = useState(false);
 
     const [note, setNote]= useState({
         title:"",
@@ -27,18 +29,39 @@ const CreateNotes = () => {
         console.log(note);
     };
 
+    const addEvent = () =>{
+        props.passNote(note);
+        setNote({
+            title:"",
+            content:"",
+        });
+
+    };
+    
+    const ExpandIt = () =>{
+        setExpand(true);
+    }
+
+    const ShrinkIt = () =>{
+        setExpand(false);
+    }
+
+
     return (
         <div className="main_note">
             <form>
-                <input type='text' name="title" value={note.title} onChange={InputEvent} placeholder="Title" autoComplete="off"/>
-                <textarea rows='' column="" name="content" value={note.content} onChange={InputEvent} placeholder="Write a note..."></textarea>
+                {expand?
+                <input type='text' name="title" value={note.title} onChange={InputEvent} placeholder="Title" autoComplete="off" onDoubleClick={ShrinkIt}/> :null}
+                <textarea rows='' column="" name="content" value={note.content} onChange={InputEvent} placeholder="Write a note..." onClick={ExpandIt} onDoubleClick={ShrinkIt}></textarea>
+                {expand?
                 <Button
                     variant="contained"
                     color="primary"
                     startIcon={<AddIcon />}
+                    onClick={addEvent}
                 >
                     Add Note
-                </Button>
+                </Button>:null}
             </form>
         </div>
     );

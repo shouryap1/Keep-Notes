@@ -1,20 +1,19 @@
 import React from "react";
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 
-const Notes = () => {
+const Notes = (props) => {
+    const deleteNote = () => {
+        props.deleteItem(props.id);
+    };
+
     return (
-        <div className="notes-container"> {/* Container for notes */}
-            <div className="notes">
-                <h1>
-                    title
-                </h1>
-                <br/>
-                <p>This is the content</p>
-                <button className="btn">
-                <DeleteOutlineIcon className="deleteIcon"/>
-                </button>
-            </div>
-            {/* Add more instances of Notes component as needed */}
+        <div className="notes">
+            <h1>{props.title}</h1>
+            <br/>
+            <p>{props.content}</p>
+            <button className="btn" onClick={deleteNote}>
+                <DeleteOutlineIcon className="deleteIcon" />
+            </button>
         </div>
     );
 };
