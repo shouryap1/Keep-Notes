@@ -33,6 +33,6 @@ npm start
 ## Contact
 If you have any questions or suggestions, feel free to reach out.
 
-Name: Shourya
-Email: shourya.prasad1@gmail.com
-GitHub: shouryap1
+- **Name**: Pandey Shourya Prasad
+- **Email**: [Email](mailto:shourya.prasad1@gmail.com)
+- **GitHub**: [shouryap1](https://github.com/shouryap1)
